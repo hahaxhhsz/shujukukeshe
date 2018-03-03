@@ -18,38 +18,38 @@ import operating.dbOperating;
 
 
 /**
- * @author Íõ³¿³¬
+ * @author ç‹æ™¨è¶…
  *
- * 2018Äê2ÔÂ26ÈÕ
+ * 2018å¹´2æœˆ26æ—¥
  */
 public class panel3 extends MagPanelModel {
 
 	private static final long serialVersionUID = 1L;
 	private JTextField[] theText = new JTextField[11];
-	//ÉèÖÃ×Ô¶¯Ëã¹¤×ÊµÄ²ÎÊı
+	//è®¾ç½®è‡ªåŠ¨ç®—å·¥èµ„çš„å‚æ•°
 	private int[] a =  new int[11];
-	//¹¹Ôìº¯Êı£¬ĞèÒªÖªµÀÊÇÄÄ¸ö´°ÌåºÍÄÄ¸öÒÑÁ¬½ÓµÄÊı¾İ¿â
+	//æ„é€ å‡½æ•°ï¼Œéœ€è¦çŸ¥é“æ˜¯å“ªä¸ªçª—ä½“å’Œå“ªä¸ªå·²è¿æ¥çš„æ•°æ®åº“
 	public panel3(JFrame jFrame,dbOperating db) {
 		super(jFrame,db);
 		this.theDB = db;
-        //¸ø±í¸ñÌí¼Ó¼àÌıÆ÷
+        //ç»™è¡¨æ ¼æ·»åŠ ç›‘å¬å™¨
         jTable.addMouseListener(new jtableActiong());
-		//ÉèÖÃĞÅÏ¢ÏÔÊ¾Ãæ°å
+		//è®¾ç½®ä¿¡æ¯æ˜¾ç¤ºé¢æ¿
 		infoPanel.setLayout(new GridLayout(4, 6));
 		placeInfoComponents();
-		//¸ø×Ô¶¯Ëã¹¤×Ê²ÎÊıÉèÖÃ³õÊ¼Öµ
-		//a[0]ÎªÈëÖ°Ã¿¶àÒ»Äê»ù±¾¹¤×ÊÕÇ¶àÉÙ
+		//ç»™è‡ªåŠ¨ç®—å·¥èµ„å‚æ•°è®¾ç½®åˆå§‹å€¼
+		//a[0]ä¸ºå…¥èŒæ¯å¤šä¸€å¹´åŸºæœ¬å·¥èµ„æ¶¨å¤šå°‘
 		a[0] = 100;
-		//a[1]ÎªÈëÖ°µÚÒ»ÄêµÄ»ù±¾¹¤×Ê
+		//a[1]ä¸ºå…¥èŒç¬¬ä¸€å¹´çš„åŸºæœ¬å·¥èµ„
 		a[1] = 1000;
-		//a[2]ÎªÊĞ³¡²¿²¿ÃÅ½±½ğ£¬a[3]Îª²ÆÕş²¿²¿ÃÅ½±½ğ£¬a[4]Îª¼¼Êõ²¿²¿ÃÅ½±½ğ
+		//a[2]ä¸ºå¸‚åœºéƒ¨éƒ¨é—¨å¥–é‡‘ï¼Œa[3]ä¸ºè´¢æ”¿éƒ¨éƒ¨é—¨å¥–é‡‘ï¼Œa[4]ä¸ºæŠ€æœ¯éƒ¨éƒ¨é—¨å¥–é‡‘
 		a[2] = 1500;
 		a[3] = 1100;
 		a[4] = 1200;
-		//a[5]Îª¾­ÀíÖ°Îñ½±½ğ£¬a[6]ÎªÁÙÊ±¹¤Ö°Îñ½±½ğ
+		//a[5]ä¸ºç»ç†èŒåŠ¡å¥–é‡‘ï¼Œa[6]ä¸ºä¸´æ—¶å·¥èŒåŠ¡å¥–é‡‘
 		a[5] = 5000;
 		a[6] = 100;
-		//a[7]³Ùµ½Ò»´Î¿Û¶àÉÙ£¬a[8]ÔçÍËÒ»´Î¿Û¶àÉÙ£¬a[9]Çë¼ÙÒ»´Î¿Û¶àÉÙ£¬a[10]¼Ó°àÒ»´Î¼Ó¶àÉÙ
+		//a[7]è¿Ÿåˆ°ä¸€æ¬¡æ‰£å¤šå°‘ï¼Œa[8]æ—©é€€ä¸€æ¬¡æ‰£å¤šå°‘ï¼Œa[9]è¯·å‡ä¸€æ¬¡æ‰£å¤šå°‘ï¼Œa[10]åŠ ç­ä¸€æ¬¡åŠ å¤šå°‘
 		a[7] = -50;
 		a[8] = -30;
 		a[9] = -80;
@@ -62,11 +62,11 @@ public class panel3 extends MagPanelModel {
 	
 	
 	
-	//ÉèÖÃÒ»¸öË½ÓĞº¯ÊıÀ´Ìí¼ÓĞÅÏ¢ÏÔÊ¾Ãæ°å×é¼ş
+	//è®¾ç½®ä¸€ä¸ªç§æœ‰å‡½æ•°æ¥æ·»åŠ ä¿¡æ¯æ˜¾ç¤ºé¢æ¿ç»„ä»¶
 	private void placeInfoComponents(){
-		String[] theLabel = {"Ô±¹¤ºÅ","Ê±¼ä","»ù±¾¹¤×Ê","²¿ÃÅ½±½ğ","¹«»ı½ğ","ÎåÏÕ·Ñ","Ö°Îñ½òÌù","¿¼ÇÚ¹¤×Ê","Ë°Ç°¹¤×Ê","Ë°ºó¹¤×Ê","¹«Ë¾×ÜÖ§³ö"};
-		JButton submit = new JButton("Ìá½»");
-		JButton reset = new JButton("ÉèÖÃ×Ô¶¯Ëã¹¤×Ê²ÎÊı");
+		String[] theLabel = {"å‘˜å·¥å·","æ—¶é—´","åŸºæœ¬å·¥èµ„","éƒ¨é—¨å¥–é‡‘","å…¬ç§¯é‡‘","äº”é™©è´¹","èŒåŠ¡æ´¥è´´","è€ƒå‹¤å·¥èµ„","ç¨å‰å·¥èµ„","ç¨åå·¥èµ„","å…¬å¸æ€»æ”¯å‡º"};
+		JButton submit = new JButton("æäº¤");
+		JButton reset = new JButton("è®¾ç½®è‡ªåŠ¨ç®—å·¥èµ„å‚æ•°");
 		submit.addActionListener(new submitAction());
 		reset.addActionListener(new submitAction());
 		int i = 0;
@@ -102,12 +102,12 @@ public class panel3 extends MagPanelModel {
 	
 	
 
-	//´´½¨Ò»¸öÄÚ²¿ÀàÀ´¼àÌıÌá½»ºÍÌá½»ÖØÖÃ°´Å¥
+	//åˆ›å»ºä¸€ä¸ªå†…éƒ¨ç±»æ¥ç›‘å¬æäº¤å’Œæäº¤é‡ç½®æŒ‰é’®
 	private class submitAction implements ActionListener{
 
 	
 	public void actionPerformed(ActionEvent e) {
-		if(e.getActionCommand()=="Ìá½»"){
+		if(e.getActionCommand()=="æäº¤"){
 			String[] datas = new String[11];
 			for(int i = 0;i<11;i++){
 				datas[i] = theText[i].getText();
@@ -116,12 +116,12 @@ public class panel3 extends MagPanelModel {
 				theDB.insert(datas, 3);
 				theDB.closeState();
 			}else {
-				new Mydialog("²»ÊÇÒ»¸öÕıÈ·µÄÊ±¼ä£¬\nÄê¼ÓÉÏÒ»¸ö-ÔÙ¼ÓÔÂ·İ,ÇÒÊÇÔÚ2017Äê1ÔÂµ½2050Äê1ÔÂÒÔÇ°µÄÊ±¼ä");
+				new Mydialog("ä¸æ˜¯ä¸€ä¸ªæ­£ç¡®çš„æ—¶é—´ï¼Œ\nå¹´åŠ ä¸Šä¸€ä¸ª-å†åŠ æœˆä»½,ä¸”æ˜¯åœ¨2017å¹´1æœˆåˆ°2050å¹´1æœˆä»¥å‰çš„æ—¶é—´");
 			}
 
 		}
 		else {
-        	//µã»÷ÉèÖÃ²ÎÊı°´Å¥£¬Ìø³ö¶Ô»°¿ò£¬ÉèÖÃ²ÎÊı
+        	//ç‚¹å‡»è®¾ç½®å‚æ•°æŒ‰é’®ï¼Œè·³å‡ºå¯¹è¯æ¡†ï¼Œè®¾ç½®å‚æ•°
 			JOptionPaneMultiInput showset = new JOptionPaneMultiInput(a);
 			a = showset.show();
 		}
@@ -131,12 +131,12 @@ public class panel3 extends MagPanelModel {
 
 	
 	private class jtableActiong extends MouseAdapter{
-		//µ¥»÷Ä³ĞĞ£¬´¥·¢ÊÂ¼ş
+		//å•å‡»æŸè¡Œï¼Œè§¦å‘äº‹ä»¶
         public void mouseClicked(MouseEvent event)  
         {  
         	int row = jTable.getSelectedRow();
         	Object[] theData = new Object[11];
-        	//¸ù¾İ¹«Ë¾¾ßÌåµÄ¹æ¶¨£¬Ëã³ö¸ÃÔÂ¸ÃÔ±¹¤µÄ¹¤×Ê
+        	//æ ¹æ®å…¬å¸å…·ä½“çš„è§„å®šï¼Œç®—å‡ºè¯¥æœˆè¯¥å‘˜å·¥çš„å·¥èµ„
         	theData[0] = jTable.getValueAt(row, 0);
         	theData[1] = jTable.getValueAt(row, 5);
         	theData[2] = Integer.parseInt((String) jTable.getValueAt(row, 4))*a[0]+a[1];
@@ -145,42 +145,42 @@ public class panel3 extends MagPanelModel {
         		dtype="";
         	}
         	switch (dtype) {
-			case "ÊĞ³¡²¿":
+			case "å¸‚åœºéƒ¨":
 				theData[3] = a[2];
 				break;
-			case "²ÆÕş²¿":
+			case "è´¢æ”¿éƒ¨":
 				theData[3] = a[3];
 				break;
-			case "¼¼Êõ²¿":
+			case "æŠ€æœ¯éƒ¨":
 				theData[3] = a[4];
 				break;
 			default:
 				theData[3] = 0;
 				break;
 			}
-        	//²»ÖªµÀÎåÏÕÒ»½ğÔõÃ´ËãµÄ£¬¾ÍÓÃËæ»úÊıÀ´´úÌæ½ÉÄÉ²»Í¬µÄ
-        	theData[4] = -(int)1000-(int)Math.random()*1000;
-        	theData[5] = -(int)500-(int)Math.random()*500;
+        	//ä¸çŸ¥é“äº”é™©ä¸€é‡‘æ€ä¹ˆç®—çš„ï¼Œå°±ç”¨éšæœºæ•°æ¥ä»£æ›¿ç¼´çº³ä¸åŒçš„
+        	theData[4] = -(int)1000-(int)(Math.random()*1000);
+        	theData[5] = -(int)500-(int)(Math.random()*500);
         	dtype = (String) jTable.getValueAt(row, 3);
-        	//¸ù¾İ²»Í¬Ö°Îñ¸ø²»Í¬Ö°Îñ½±½ğ£¬ÎÒËæ±ãÉèµÄ¹æÔò
+        	//æ ¹æ®ä¸åŒèŒåŠ¡ç»™ä¸åŒèŒåŠ¡å¥–é‡‘ï¼Œæˆ‘éšä¾¿è®¾çš„è§„åˆ™
         	int difference = (a[5]-a[6])/5;
         	switch (dtype) {
-			case "¾­Àí":
+			case "ç»ç†":
 				theData[6] = a[5];
 				break;
-			case "¸±¾­Àí":
+			case "å‰¯ç»ç†":
 				theData[6] = a[6]+difference*4;
 				break;
-			case "×é³¤":
+			case "ç»„é•¿":
 				theData[6] = a[6]+difference*3;
 				break;
-			case "¸±×é³¤":
+			case "å‰¯ç»„é•¿":
 				theData[6] = a[6]+difference*2;
 				break;
-			case "Ö°¹¤":
+			case "èŒå·¥":
 				theData[6] = a[6]+difference*1;
 				break;
-			case "ÁÙÊ±¹¤":
+			case "ä¸´æ—¶å·¥":
 				theData[6] = a[6];
 				break;	
 			default:
@@ -199,7 +199,7 @@ public class panel3 extends MagPanelModel {
         	theData[9] = afterTax(all);
         	theData[10] = all-(int)theData[4]-(int)theData[5];
         	
-        	//¶ÔÓ¦µØ½«Ëã³öµÄ½á¹ûÔÚÏàÓ¦text³öÏÔÊ¾
+        	//å¯¹åº”åœ°å°†ç®—å‡ºçš„ç»“æœåœ¨ç›¸åº”textå‡ºæ˜¾ç¤º
         	for(int i = 0 ;i < 11;i++){
         		if(theData[i]==null){
         			theData[i]="";
@@ -208,7 +208,7 @@ public class panel3 extends MagPanelModel {
         	}
         } 
         
-        //¿Û³ı¸öÈËËùµÃË°
+        //æ‰£é™¤ä¸ªäººæ‰€å¾—ç¨
         private double afterTax(int before) {
         	double base = before - 3500;  
             double tax = 0;  
